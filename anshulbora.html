@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Just One Thing</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 360px;
+  padding: 35px 30px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  color: #fff;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  margin: 0 0 15px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  min-height: 90px;
+}
+
+button {
+  padding: 10px 28px;
+  border-radius: 25px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.next { background: #facc15; color: #000; }
+.yes { background: #22c55e; color: #fff; }
+.no { background: #ef4444; color: #fff; }
+.ok { background: #38bdf8; color: #000; }
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- ONLY FIRST PAGE -->
+  <h2 id="title">heyyyy badmosh 😄</h2>
+
+  <p id="text">
+    Ek chhoti si cheez likhi hai — bina pressure.
+  </p>
+
+  <button id="nextBtn" class="next" onclick="nextPage()">Next</button>
+
+  <div id="yesNoBtns" class="btns" style="display:none;">
+    <button class="yes" onclick="yesClick()">Yes</button>
+    <button class="no" onclick="noClick()">No</button>
+  </div>
+
+  <div id="okBtn" style="display:none;">
+    <button class="ok" onclick="finish()">Okkk Thanks 🙂</button>
+  </div>
+
+  <div class="footer" id="footer">— just honesty</div>
+
+</div>
+
+<script>
+let noCount = 0;
+
+function nextPage() {
+  document.getElementById("title").style.display = "none";
+  document.getElementById("text").innerText =
+    "Last baar puch raha hoon — bina force. Kya hum ek baar calmly baat kar sakte hain?";
+
+  document.getElementById("nextBtn").style.display = "none";
+  document.getElementById("yesNoBtns").style.display = "flex";
+}
+
+function noClick() {
+  noCount++;
+  const text = document.getElementById("text");
+
+  if (noCount === 1) {
+    text.innerText =
+      " Dekho bhyii IK ki tumhe baat nhi badhani h but m last bar puch rha hu fr nhi puchunga kabhi or na hi force krra bss mujhe ye clear krna h ki tum merse baat krna chahti ho ya ni?";
+  }
+  else if (noCount === 2) {
+    text.innerText =
+      "Pta tha No m click karogi. or tumhara no bhi kehna sahi h kyuki tumhe repeat nhi krna wahi baat frrr ladai , but iss bar esa nhi hoga. Esa toh h ni ki jo chij hori h wahi chlti rhe or Mujhe pta esa two time repeat hua h or tum galat nhi ho but iss baar agar tum chance dogi toh repeat nhi hoga kyuki m vo glti dubara nhi chahta. Baki aapki marji. If yes click yes or if no click no . Thanks .";
+  }
+  else if (noCount === 3) {
+    text.innerText =
+      "Kya hum ek baar bina arguments , bina expectations ,shanti se milke baat kr skte h?";
+  }
+  else if (noCount === 4) {
+    text.innerText =
+      "Hahahaha fr no. Chlo aapki marji. Force thodi kr skta hu na aapko. Abhi bhi mauka h yes or no option ka dekh lo esa mauka baar baar nhi milta.";
+  }
+  else if (noCount === 5) {
+    text.innerText =
+      "Soch lo ek baar firse mera jaise itna pyar krne wala kya pta na mile aapko😄😂🤣, mjak krra bahut honge waise toh , fr bhi m toh m hi hu na😄😂🤣, Chlo fr se no m clickk kr lo frr";
+  }
+
+   else if (noCount === 6) {
+    text.innerText =
+      "Bol do bhyii ki \"chlo mil lete h\" mujhe ek pal ki khushi milegi. But no hi hoga tumhara answer";
+  }
+
+  else if (noCount === 7) {
+    text.innerText =
+      "Soch lo dubara🙂 baat toh kr hi skte h na like ek chance ";
+  }
+      else if (noCount === 8) {
+    text.innerText =
+      "Chlo koi ni tumhe baat ni krni toh. Gussa mat krna meri esi harkat m , maine bss ese hi likh diya. Agar tumhe nhi baat krni ya nhi milna h toh meko mssg kr dena No ya yes . Thank  you aapka aapne itna time diya ye mssg ke liye";
+      }
+
+      else if (noCount === 9) {
+    text.innerText =
+      "Oye ye maine bss esi hi banaya h ha , bss website host krne ki practice krra tha toh socha first try tumpr kru😄. Chlo by byyy. Abhi bhi yes or no h dekh lo😄 ";
+      }
+  else {
+    text.innerText =
+      "Theek hai. Thanks for being honest 🙂.Ek last bar mil skte h kya? Agar milna hoga toh bta dena ki mil lete h ek last time . And Sorryyyyyy Badmoshhhh . Or agar lage yes krlu toh refresh mar lena site 😄";
+
+    document.getElementById("yesNoBtns").style.display = "none";
+    document.getElementById("okBtn").style.display = "block";
+  }
+}
+
+function yesClick() {
+  document.getElementById("text").innerText =
+    "Achha laga sunke ❤️ Hum shanti se baat kar sakte hain. Mujhe pta tha tum yes hi bologi 😄😂🤣. I know tumne yes m click bss dekhne ke liye hi kiya h. Agar tumhara man badala ho toh ek bar baat kr skte h ? ";
+
+  document.getElementById("yesNoBtns").style.display = "none";
+  document.getElementById("okBtn").style.display = "block";
+  document.getElementById("footer").innerText = "— appreciated";
+}
+
+function finish() {
+  document.getElementById("text").innerText =
+    "Thanks for taking time 🙂 Jo bhi ho, respect hamesha rahega. Or kisiko mat dikhana ye mtlb apni didiyo ko hasengi merpe . Pgl h ye kahenge merse , vaise toh hu aapke pyar m😂🤣  ";
+}
+</script>
+
+</body>
+</html>
